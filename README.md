@@ -26,7 +26,7 @@ Medical coding, or converting physician notes into standardized ICD-10 codes, is
 
 **Tools:** Python, OpenAI API (GPT-3.5 Turbo), Bio-ClinicalBERT, ChromaDB, cross-encoder reranking, CodeCarbon
 
-➡️ View project: [mensprediction.ipynb](./mensprediction.ipynb)
+➡️ View project: [med_coding_single_code.ipynb](./med_coding_single_code.ipynb)
 
 **Next steps:**
 - Diagnose and resolve elevated hallucination rate
