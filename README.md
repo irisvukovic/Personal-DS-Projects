@@ -18,8 +18,6 @@ Medical coding, or converting physician notes into standardized ICD-10 codes, is
 
 **How it works:** Clinical notes and ICD-10 guidelines are embedded using **Bio-ClinicalBERT** and stored in **ChromaDB**. When a new note is submitted, the pipeline retrieves the 20 most semantically similar documents, reranks them to the top 10 using a cross-encoder model (ms-marco-MiniLM-L-6-v2), and passes them as context to **GPT-3.5 Turbo** via the OpenAI API. The model returns the top-5 ICD-10 code predictions. A rule-based fallback (KNN-style) handles cases where LLM output cannot be parsed.
 
-**Knowledge base:** Synthetically generated clinical notes were used instead of real MIMIC-IV records to avoid potential data-use agreement violations with third-party APIs. 25 ICD-10 codes × 30 synthetic notes each.
-
 **Evaluation:** Top-1 and top-5 accuracy on held-out notes. Hallucination rate comparison between RAG and GPT-only baseline. Carbon footprint tracking via CodeCarbon for local compute.
 
 **Current findings:** RAG currently shows higher hallucination rates than the GPT-only baseline, which is an unexpected result I'm actively investigating. My working hypothesis is that retrieval noise from semantically overlapping synthetic notes is introducing misleading context. 
@@ -27,11 +25,6 @@ Medical coding, or converting physician notes into standardized ICD-10 codes, is
 **Tools:** Python, OpenAI API (GPT-3.5 Turbo), Bio-ClinicalBERT, ChromaDB, cross-encoder reranking, CodeCarbon
 
 ➡️ View project: [med_coding_single_code.ipynb](./med_coding_single_code.ipynb)
-
-**Next steps:**
-- Diagnose and resolve elevated hallucination rate
-- Expand to multi-code prediction (primary + secondary diagnoses)
-- Build a Power BI visualization for evaluation metrics
 
 ---
 
