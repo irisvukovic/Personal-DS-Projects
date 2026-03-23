@@ -16,7 +16,7 @@ Below are the **detailed descriptions and reflections** for each project listed 
 
 Medical coding, or converting physician notes into standardized ICD-10 codes, is expensive, slow, and prone to errors when done manually. This project builds an automated pipeline to suggest ICD-10 codes from raw clinical notes using a retrieval-augmented generation (RAG) architecture.
 
-**How it works:** Clinical notes and ICD-10 guidelines are embedded using **Bio-ClinicalBERT** and stored in **ChromaDB**. When a new note is submitted, the pipeline retrieves the 20 most semantically similar documents, reranks them to the top 10 using a cross-encoder model (ms-marco-MiniLM-L-6-v2), and passes them as context to **GPT-3.5 Turbo** via the OpenAI API. The model returns the top-5 ICD-10 code predictions. A rule-based fallback (KNN-style) handles cases where LLM output cannot be parsed.
+**How it works:** Clinical notes and ICD-10 guidelines are embedded using **Bio-ClinicalBERT** and stored in **ChromaDB**. When a new note is submitted, the pipeline retrieves the 20 most semantically similar documents, reranks them to the top 10 using a cross-encoder model (ms-marco-MiniLM-L-6-v2), and passes them as context to **GPT-3.5 Turbo** via the OpenAI API. The model returns the top-5 ICD-10 code predictions. 
 
 **Evaluation:** Top-1 and top-5 accuracy on held-out notes. Hallucination rate comparison between RAG and GPT-only baseline. Carbon footprint tracking via CodeCarbon for local compute.
 
