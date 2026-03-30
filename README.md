@@ -5,7 +5,7 @@ Projects are listed in chronological order (newest → oldest).
 
 | Project | Description | Tools |
 |--------|------------|------|
-| **LLM-Based Medical Coding** *(In progress)* | RAG pipeline that converts unstructured clinical notes into ICD-10 codes using GPT-3.5 Turbo and Bio-ClinicalBERT | Python, OpenAI API |
+| **LLM-Based Medical Coding** *(In progress)* | RAG pipeline that converts unstructured clinical notes into ICD-10 codes | Python, ThauraAI API |
 | **2025 US Open Predictor** | First personal project exploring XGBoost on historical ATP tennis data | Python, XGBoost |
 
 Below are the **detailed descriptions and reflections** for each project listed above.
@@ -16,13 +16,13 @@ Below are the **detailed descriptions and reflections** for each project listed 
 
 Medical coding, or converting physician notes into standardized ICD-10 codes, is expensive, slow, and prone to errors when done manually. This project builds an automated pipeline to suggest ICD-10 codes from raw clinical notes using a retrieval-augmented generation (RAG) architecture.
 
-**How it works:** Clinical notes and ICD-10 guidelines are embedded using **Bio-ClinicalBERT** and stored in **ChromaDB**. When a new note is submitted, the pipeline retrieves the 20 most semantically similar documents, reranks them to the top 10 using a cross-encoder model (ms-marco-MiniLM-L-6-v2), and passes them as context to **GPT-3.5 Turbo** via the OpenAI API. The model returns the top-5 ICD-10 code predictions. 
+**How it works:** Clinical notes and ICD-10 guidelines are embedded using **Bio-ClinicalBERT** and stored in **ChromaDB**. When a new note is submitted, the pipeline retrieves the 20 most semantically similar documents, reranks them to the top 10 using a cross-encoder model (ms-marco-MiniLM-L-6-v2), and passes them as context to **Thaura** via the ThauraAI API. The model returns the top-3 ICD-10 code predictions. 
 
-**Evaluation:** Top-1 and top-5 accuracy on held-out notes. Hallucination rate comparison between RAG and GPT-only baseline. Carbon footprint tracking via CodeCarbon for local compute.
+**Evaluation:** Top-1 and top-3 accuracy on held-out notes. Hallucination rate comparison between RAG and GPT-only baseline. Carbon footprint tracking via CodeCarbon for local compute.
 
-**Current findings:** RAG currently shows higher hallucination rates than the GPT-only baseline, which is an unexpected result I'm actively investigating. My working hypothesis is that retrieval noise from semantically overlapping synthetic notes is introducing misleading context. 
+**Findings:** RAG-based architecture improved accuracy (+44%) and reduced hallucinations (-2) compared to GPT-only.
 
-**Tools:** Python, OpenAI API (GPT-3.5 Turbo), Bio-ClinicalBERT, ChromaDB, cross-encoder reranking, CodeCarbon
+**Tools:** Python, ThauraAI API, Bio-ClinicalBERT, ChromaDB, cross-encoder reranking, CodeCarbon
 
 ➡️ View project: [med_coding_single_code.ipynb](./med_coding_single_code.ipynb)
 
