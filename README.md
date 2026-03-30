@@ -27,6 +27,7 @@ This project investigates how Airbnb activity in Barcelona may be contributing t
 ➡️ View project files: [project files](./barcelona_airbnb/Development)
 
 ➡️ View project results: [project results](./barcelona_airbnb/results)
+
 ---
 
 ### LLM-Based Medical Coding Pipeline *(In Progress)*
