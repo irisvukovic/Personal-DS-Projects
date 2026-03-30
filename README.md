@@ -22,6 +22,7 @@ This project investigates how Airbnb activity in Barcelona may be contributing t
 
 ➡️ View project: [barcelona_airbnb.ipynb](./barcelona_airbnb.ipynb)
 
+**To do:** Extend exploration to compare Barcelona to other cities with housing displacement issues caused by Airbnb commercialization.
 
 ---
 
@@ -38,6 +39,8 @@ Medical coding, or converting physician notes into standardized ICD-10 codes, is
 **Tools:** Python, ThauraAI API, Bio-ClinicalBERT, ChromaDB, cross-encoder reranking, CodeCarbon
 
 ➡️ View project: [med_coding_single_code.ipynb](./med_coding_single_code.ipynb)
+
+**To do:** Power BI visual analysis.
 
 ---
 
