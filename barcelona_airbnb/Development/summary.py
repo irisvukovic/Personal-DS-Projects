@@ -1,0 +1,12 @@
+# SUMMARY: KEY FINDINGS 
+print("\n" + "="*55)
+print("EDA SUMMARY — KEY NUMBERS TO REMEMBER")
+print("="*55)
+print(f"Total listings:              {len(df):,}")
+print(f"Unique hosts:                {df['host_id'].nunique():,}")
+print(f"% Entire home/apt:           {(df['room_type']=='Entire home/apt').mean()*100:.1f}%")
+print(f"% Multi-listing hosts:       {(df['calculated_host_listings_count']>1).mean()*100:.1f}%")
+print(f"% High availability (>180d): {(df['availability_365']>180).mean()*100:.1f}%")
+print(f"% With HUTB license:         {(df['license_status']=='has_hutb').mean()*100:.1f}%")
+print(f"% Missing license:           {(df['license_status']=='missing').mean()*100:.1f}%")
+print("="*55)

@@ -1,0 +1,808 @@
+id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+name: Development
+type: 1
+canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+blocks:
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Loads Airbnb listings dataset (19,410 rows, 79 columns) from compressed
+    CSV. Displays dataset shape and column names for data exploration.
+  height: 1000
+  id: 04af74f5-4a44-46c5-89cf-e4982ad4ee4f
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: load
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 0
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: 'Applies K-means clustering (k=4) to segment listings into operator
+    types: casual, medium-term room/home rental, and commercial. Validates cluster
+    count using elbow and silhouette analysis, then relabels clusters by commercialization
+    score for interpretability.'
+  height: 1000
+  id: 069f4b02-0cda-4869-ab97-b4bb85785bf9
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: kmeans
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 7500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: 'Creates side-by-side visualizations of commercialization score distribution:
+    histogram showing listing frequency across score ranges, and cumulative distribution
+    curve showing percentile thresholds for commercial operation level.'
+  height: 1000
+  id: 0ddd0b76-5f7f-4afd-baa2-7ecd5572fd99
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: score_dist
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 7000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Loads Airbnb listings, cleans price and license fields, filters out
+    hotels/hostels, and removes inactive properties. Results in 16.4K cleaned listings
+    from 19.4K raw records.
+  height: 1000
+  id: 173300e2-04ab-4a3e-8a5a-05b3aa81b0dd
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: load_and_clean
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 5000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Creates an interactive choropleth map of Barcelona neighbourhoods colored
+    by Housing Pressure Index (HPI) score, with tooltips showing listing stats. Currently
+    fails due to missing data field in tooltip configuration.
+  height: 1000
+  id: 1844c729-3926-456f-b7ad-7b2d1fba8f27
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: map
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 12500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Validates Airbnb operator segments by sampling and displaying key metrics
+    (price, availability, reviews, commercialization score) for each cluster to spot-check
+    data quality and classification accuracy.
+  height: 1000
+  id: 1a7709f9-7ad4-4570-8883-b9c5df5fd74a
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: manual_val
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 8500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Calculates Housing Pressure Index (HPI) by normalizing and weighting
+    five metrics (entire home %, commercial confidence, commercial score, commercial
+    type %, availability) to identify neighborhoods at highest risk of residential
+    displacement.
+  height: 1000
+  id: 2249d15f-c04a-4600-b915-966074a9085c
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: hpi
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 11500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: 'Constructs 5 commercial behavior features from Airbnb listing data:
+    host scale, availability, minimum night stays, entire home designation, and regulatory
+    arbitrage patterns. Higher values indicate more commercial operation.'
+  height: 1000
+  id: 230e9660-e244-42ec-a000-29ca86b74971
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: feature_engineering
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 5500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Analyzes data quality by calculating null rates across all columns,
+    then highlights missing data in 16 critical project columns to identify usable
+    fields and data gaps for downstream analysis.
+  height: 1000
+  id: 27cb4bf9-5522-4d07-90ed-c5093b02d42e
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: check
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Creates a ranked horizontal bar chart visualizing Barcelona neighborhoods
+    by Housing Pressure Index, color-coded from green to red with mean reference line.
+    Saves chart as PNG for presentations.
+  height: 1000
+  id: 2c61e7d8-1502-4f80-97ef-39e6328a39fe
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: bar
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 12000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Displays a summary of the Housing Pressure Index (HPI) analysis across
+    71 neighborhoods, showing mean HPI, highest/lowest pressure areas, and top/bottom
+    5 neighborhoods by quartile ranking.
+  height: 1000
+  id: 2d885de6-4f30-40d1-abd9-a9a8f0386122
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: summ
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 13500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: 'Installs geopandas and folium geospatial libraries to a custom directory
+    and verifies imports. Note: Last run failed due to read-only filesystem.'
+  height: 1000
+  id: 2dfdecc6-92ee-4c54-b276-31d7fc9d6a75
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: install_geo_packages
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 10000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Analyzes listing availability patterns by generating summary statistics
+    and a histogram of annual availability. Shows that 57% of listings are available
+    >180 days/year, indicating frequent availability for short-term rentals vs. owner-occupied
+    properties.
+  height: 1000
+  id: 305bbafa-e309-4ef8-a521-9d19b47bcf69
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: listing_availability
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 2000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Introduces a commercial operator detection system that scores listings
+    0-100 to distinguish professional rental operations from homeowners renting a
+    single room, enabling unsupervised classification and clustering analysis.
+  height: 1000
+  id: 374e017d-4191-4551-b745-c7666a9aea13
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: markdown_block_1
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 0
+  y: 4500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: "Cleans nightly price data by removing currency formatting, computes\
+    \ summary statistics (mean \u20AC187, median \u20AC131), and visualizes the price\
+    \ distribution in a histogram showing most listings fall between \u20AC0\u2013\
+    600."
+  height: 1000
+  id: 392804a9-1bb6-45b2-a7dc-6f4c901ea257
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: price
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 3000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Introduces Barcelona's housing displacement issue driven by Airbnb
+    commercialization and tourism growth
+  height: 1000
+  id: 3a65d417-cb70-45fb-aed8-499115e2f15f
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: markdown_block_4
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 0
+  y: -1000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Analyzes host listing counts to identify commercialization levels.
+    Shows summary statistics and percentage thresholds (e.g., 76% of hosts have >1
+    listing). Visualizes distribution histogram clipped at 50 listings.
+  height: 1000
+  id: 5df0e6c7-5109-474a-b025-9cf1c24682dc
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: host_listings
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 1500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Project title introducing the Barcelona Airbnb housing displacement
+    analysis
+  height: 1000
+  id: 610a2258-59ab-45a1-a109-42c565b1905d
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: markdown_block_2
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 0
+  y: -1000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: 'Displays key summary statistics from Airbnb EDA: 19.4K listings, 6.6K
+    hosts, 60.7% entire homes, 76.3% multi-listing hosts, 57% high availability, and
+    licensing rates.'
+  height: 1000
+  id: 61534df0-4e49-4c67-b7ce-73471913cdd4
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: summary
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 4000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Exports analyzed listings to CSV and displays summary statistics of
+    operator classifications (casual, medium-term home/room rental, commercial) with
+    mean commercialization scores by type.
+  height: 1000
+  id: 68cc8280-753b-47df-8ef4-01f4de3d9fca
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: save_and_summary
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 9000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Calculates Pearson correlations between housing metrics and the Housing
+    Pressure Index, then visualizes feature importance with a horizontal bar chart
+    to identify which metrics most strongly drive HPI.
+  height: 1000
+  id: 6d69128e-9b55-4119-8f24-da1c8fc1a1aa
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: corr
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 13000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Analyzes license field data quality and patterns. Reports missing rate
+    (28.2%), categorizes licenses into HUTB-formatted, exempt/blank, other formats,
+    and missing values. Shows distribution across ~19.4k records with 23-28% in each
+    category.
+  height: 1000
+  id: 71c83664-2764-4e86-b1d6-205014001428
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: license_field_analysis
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 2500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Aggregates listing-level scores into a neighborhood-level Housing Pressure
+    Index (HPI) measuring short-term rental commercial activity concentration, then
+    displays results as a choropleth map.
+  height: 1000
+  id: 726899d4-bc0f-4041-b681-3f54015f4379
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: markdown_block_5
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 0
+  y: 9500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: "Scales selected features to 0\u20131 range using MinMaxScaler to ensure\
+    \ no feature dominates due to different scales (e.g., host scale 1-50+ vs. availability\
+    \ 0-365). Outputs scaled feature statistics to verify normalization."
+  height: 1000
+  id: 7baab074-aa72-4405-90b3-d74061d71ef1
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: normalize_features_minmax
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 6000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Summarizes Barcelona's regulatory shift toward tightening short-term
+    rental rules as of late 2025, noting ongoing policy implementation and uncertain
+    long-term impacts on housing, tourism, and property owners.
+  height: 1000
+  id: 83814534-129a-4ae2-a2b9-27bc875408d4
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: markdown_block_7
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 0
+  y: 14500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Identifies high-confidence commercial listings by counting signals
+    (5 key features) that exceed 0.5 threshold. Flags 743 listings (4.5%) with 3+
+    signals fired, breaking down by operator type and comparing medium-term rental
+    patterns.
+  height: 1000
+  id: 862195b6-acaf-4b1f-8d10-804c6ac665c5
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: confidence
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 8500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Section header for exploratory data analysis workflow
+  height: 1000
+  id: a28b9319-02b1-4307-b7a3-3aa1e65c8eb9
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: markdown_block
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 0
+  y: -500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: 'Loads and prepares geospatial datasets: installs geopandas/folium
+    packages, imports 16,558 Airbnb listings with scores and 75 Barcelona neighbourhoods
+    from GeoJSON, displays sample data to verify neighborhood name alignment across
+    datasets.'
+  height: 1000
+  id: a4d1e2f7-1e45-42c4-97dd-0be20699d686
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: load_data
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 10500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: 'Summarizes key Airbnb market findings: concentration among multi-property
+    owners, prevalence of year-round rentals (82.8% commercial/medium-term), and highest
+    housing pressure in Poblenou, l''Eixample, and Vilapicina neighborhoods with HPI
+    scores above 70.'
+  height: 1000
+  id: bfbc78a7-871f-4df1-959a-0cf0320fecd8
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: markdown_block_6
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 0
+  y: 14000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: 'Key insights from Barcelona Airbnb data: multi-property hosts dominate
+    with 6+ months annual availability; tourist apartment HUTB licenses are rare despite
+    significant missing data; vast imbalance between casual and professional landlords.'
+  height: 1000
+  id: c507a936-8c23-4f5a-a0a8-b57922210f3e
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: markdown_block_3
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 4
+  variables: null
+  width: 1600
+  x: 0
+  y: 4000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Visualizes cluster profiles comparing three operator types (casual,
+    commercial, medium-term) across commercialization features using a scaled heatmap.
+    Displays statistical summaries of listing characteristics per cluster.
+  height: 1000
+  id: de485cd1-6298-4a19-942e-8692251c95eb
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: cluster_viz
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 8000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: 'Aggregates Airbnb listings by neighborhood to calculate commercial
+    pressure metrics: total listings, percentage of entire homes, commercialization
+    confidence/scores, and availability.'
+  height: 1000
+  id: de518f08-4afd-4535-b5d2-e93465ee98f0
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: nbhd_metrics
+  parent_id: null
+  properties: {}
+  status: 3
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 11000
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: "Calculates a weighted commercialization score (0\u2013100) combining\
+    \ host scale, property type, availability, and booking patterns to identify commercial\
+    \ short-term rental listings versus personal use properties."
+  height: 1000
+  id: e28ba73d-f9f0-4c4d-be81-dea998ccff16
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: score
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 6500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Analyzes neighborhood distribution across 71 Barcelona neighborhoods,
+    identifying top 15 by listing count and ranking by entire-home listing percentage.
+    Generates a horizontal bar chart visualizing listing density by neighborhood.
+  height: 1000
+  id: e4d147d4-da62-4ed9-912b-d86b3d65d97a
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: neighborhood
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 3500
+- auto_size: false
+  canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  compute_settings: null
+  description: Analyzes and visualizes room type distribution across listings, showing
+    that entire homes/apartments dominate at 60.7% of the market, with private rooms
+    at 38.2% and minimal shared/hotel options.
+  height: 1000
+  id: eee61fe4-9f10-4af3-b949-d46b3f47fe49
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  name: room_types
+  parent_id: null
+  properties: {}
+  status: 1
+  type: 1
+  variables: null
+  width: 1600
+  x: 0
+  y: 1000
+edges:
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 004ff3e8-cb7e-4ec7-bd7f-1f4b33ef5eab
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: a28b9319-02b1-4307-b7a3-3aa1e65c8eb9
+  target: 04af74f5-4a44-46c5-89cf-e4982ad4ee4f
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 09bb052f-cff7-491d-8eb8-7d2ff9b514db
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 61534df0-4e49-4c67-b7ce-73471913cdd4
+  target: c507a936-8c23-4f5a-a0a8-b57922210f3e
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 0b70451c-c8c3-4334-915e-1e84bc65247f
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 305bbafa-e309-4ef8-a521-9d19b47bcf69
+  target: 71c83664-2764-4e86-b1d6-205014001428
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 0d349134-9755-4e3b-b8cb-5572dc7d3837
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: e4d147d4-da62-4ed9-912b-d86b3d65d97a
+  target: 61534df0-4e49-4c67-b7ce-73471913cdd4
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 0e17cebf-e37d-4a9b-8e27-42da93bee5c2
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: eee61fe4-9f10-4af3-b949-d46b3f47fe49
+  target: 5df0e6c7-5109-474a-b025-9cf1c24682dc
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 2562419b-933e-48f1-b6be-034867562d2e
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 610a2258-59ab-45a1-a109-42c565b1905d
+  target: 3a65d417-cb70-45fb-aed8-499115e2f15f
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 356d3313-c644-41f3-9c18-ce9e5f73b5dc
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 04af74f5-4a44-46c5-89cf-e4982ad4ee4f
+  target: 27cb4bf9-5522-4d07-90ed-c5093b02d42e
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 38e189de-794b-4be0-bd42-685980137e2a
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: c507a936-8c23-4f5a-a0a8-b57922210f3e
+  target: 374e017d-4191-4551-b745-c7666a9aea13
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 43303e49-ed36-4c64-9179-c0136d949be0
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 7baab074-aa72-4405-90b3-d74061d71ef1
+  target: e28ba73d-f9f0-4c4d-be81-dea998ccff16
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 4885995d-3bf0-42f2-8afd-f60df0da440e
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: de485cd1-6298-4a19-942e-8692251c95eb
+  target: 1a7709f9-7ad4-4570-8883-b9c5df5fd74a
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 4a1efa12-ef87-4a1a-84c9-df49c0e0cec4
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 2c61e7d8-1502-4f80-97ef-39e6328a39fe
+  target: 1844c729-3926-456f-b7ad-7b2d1fba8f27
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 578e3e0b-6f99-4a5b-9007-ccf99b98f966
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 1a7709f9-7ad4-4570-8883-b9c5df5fd74a
+  target: 862195b6-acaf-4b1f-8d10-804c6ac665c5
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 5d8475c2-3e0f-4a41-8af2-3a502770f089
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 6d69128e-9b55-4119-8f24-da1c8fc1a1aa
+  target: 2d885de6-4f30-40d1-abd9-a9a8f0386122
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 5fd64e29-8e5c-4449-98a6-a45ad0f14ce7
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 862195b6-acaf-4b1f-8d10-804c6ac665c5
+  target: 68cc8280-753b-47df-8ef4-01f4de3d9fca
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 64970cc8-4e3b-464c-a9f1-109a3a7a0e7e
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: a4d1e2f7-1e45-42c4-97dd-0be20699d686
+  target: de518f08-4afd-4535-b5d2-e93465ee98f0
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 72c1d086-c4ad-4272-b5fb-23a471d913d3
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 2dfdecc6-92ee-4c54-b276-31d7fc9d6a75
+  target: a4d1e2f7-1e45-42c4-97dd-0be20699d686
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 75aec50e-4058-4b24-b222-af555a7d98bc
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 68cc8280-753b-47df-8ef4-01f4de3d9fca
+  target: 726899d4-bc0f-4041-b681-3f54015f4379
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 879ccf5a-7ba4-4afc-9438-32304ca5bdeb
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 3a65d417-cb70-45fb-aed8-499115e2f15f
+  target: a28b9319-02b1-4307-b7a3-3aa1e65c8eb9
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 89996f03-a3c3-419c-95b3-4d6a37597461
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 2249d15f-c04a-4600-b915-966074a9085c
+  target: 2c61e7d8-1502-4f80-97ef-39e6328a39fe
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 98b85dd7-037a-4281-878f-5b209cf675d2
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 392804a9-1bb6-45b2-a7dc-6f4c901ea257
+  target: e4d147d4-da62-4ed9-912b-d86b3d65d97a
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: 995df496-4b59-4477-a86b-9e1615d87499
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 2d885de6-4f30-40d1-abd9-a9a8f0386122
+  target: bfbc78a7-871f-4df1-959a-0cf0320fecd8
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: aeb714a7-f184-4936-acda-1c3850002dc2
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 230e9660-e244-42ec-a000-29ca86b74971
+  target: 7baab074-aa72-4405-90b3-d74061d71ef1
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: b8079777-de4c-4e38-8b30-6eb670567027
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: de518f08-4afd-4535-b5d2-e93465ee98f0
+  target: 2249d15f-c04a-4600-b915-966074a9085c
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: b8686eae-0e26-4b36-bb15-c740dc857793
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: e28ba73d-f9f0-4c4d-be81-dea998ccff16
+  target: 0ddd0b76-5f7f-4afd-baa2-7ecd5572fd99
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: b950edfb-2c6d-49bb-a2ef-153cbd14cf55
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 374e017d-4191-4551-b745-c7666a9aea13
+  target: 173300e2-04ab-4a3e-8a5a-05b3aa81b0dd
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: c0669eec-c860-47cb-a551-24b7b0e1b56d
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 27cb4bf9-5522-4d07-90ed-c5093b02d42e
+  target: eee61fe4-9f10-4af3-b949-d46b3f47fe49
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: ca517a0c-d2c7-458a-94db-31c0e7d68ffd
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 0ddd0b76-5f7f-4afd-baa2-7ecd5572fd99
+  target: 069f4b02-0cda-4869-ab97-b4bb85785bf9
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: ce72be37-a475-4047-a9ab-717cc9798f72
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 1844c729-3926-456f-b7ad-7b2d1fba8f27
+  target: 6d69128e-9b55-4119-8f24-da1c8fc1a1aa
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: d40798e6-8f22-47db-8575-5a16140d1366
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 5df0e6c7-5109-474a-b025-9cf1c24682dc
+  target: 305bbafa-e309-4ef8-a521-9d19b47bcf69
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: d6c9306d-b0b0-417f-9f95-638df15b2e5c
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: bfbc78a7-871f-4df1-959a-0cf0320fecd8
+  target: 83814534-129a-4ae2-a2b9-27bc875408d4
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: dc10f922-a5d9-42d9-ac31-db3173bd75ae
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 71c83664-2764-4e86-b1d6-205014001428
+  target: 392804a9-1bb6-45b2-a7dc-6f4c901ea257
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: dcc783a3-7a2b-4760-930a-deb78094ab59
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 069f4b02-0cda-4869-ab97-b4bb85785bf9
+  target: de485cd1-6298-4a19-942e-8692251c95eb
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: e590a5b1-193b-473a-acf4-af348f192952
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 726899d4-bc0f-4041-b681-3f54015f4379
+  target: 2dfdecc6-92ee-4c54-b276-31d7fc9d6a75
+- canvas_id: 4ae37c91-b1f2-4c5a-a735-ce6ee511c057
+  id: f020a734-5ef2-42cd-b483-53f8b291d640
+  layer_id: fe532bc3-41fb-4fdc-bb57-227b43f50441
+  source: 173300e2-04ab-4a3e-8a5a-05b3aa81b0dd
+  target: 230e9660-e244-42ec-a000-29ca86b74971
