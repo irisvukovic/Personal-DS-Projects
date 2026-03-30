@@ -26,7 +26,7 @@ This project investigates how Airbnb activity in Barcelona may be contributing t
 
 ➡️ View project results: [project results](./barcelona_airbnb/results)
 
-➡️ View map: [HPI map](./barcelona_airbnb)
+➡️ View map: [HPI map](./barcelona_airbnb/map)
 
 ---
 
