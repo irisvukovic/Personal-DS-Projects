@@ -22,7 +22,7 @@ This project investigates how Airbnb activity in Barcelona may be contributing t
 
 **Tools:** Python, Pandas, NumPy, Scikit-learn, K-means clustering
 
-➡️ View project: [project files](./barcelona_airbnb.ipynb)
+➡️ View project: [barcelona_airbnb.ipynb](./barcelona_airbnb.ipynb)
 
 
 ---
