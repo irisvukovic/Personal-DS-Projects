@@ -14,7 +14,7 @@ Below are the **detailed descriptions and reflections** for each project listed 
 ---
 ### Barcelona Airbnb Analysis
 
-This project investigates how Airbnb activity in Barcelona may be contributing to housing displacement and pressure on the residential housing market. Using data from [Inside Airbnb](./https://insideairbnb.com/get-the-data/), I analyzed listing-level and neighborhood-level patterns to identify signs of commercialization and areas of concentrated short-term rental activity.
+This project investigates how Airbnb activity in Barcelona may be contributing to housing displacement and pressure on the residential housing market. Using data from [Inside Airbnb](https://insideairbnb.com/get-the-data/), I analyzed listing-level and neighborhood-level patterns to identify signs of commercialization and areas of concentrated short-term rental activity.
 
 **Findings:** Comparing total listings to unique hosts (19,410 vs. 6,620), it is clear that a few multi-property owners and companies are dominating the Airbnb market in the city. Only 17.2% of listings are actually casual, with the rest being commercial. Out of 49 neighborhoods analyzed, Poblenou area (80.9/100) is in the highest scoring HPI neighborhoods, with the average HPI being 60.5. 
 
