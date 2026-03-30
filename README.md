@@ -12,7 +12,7 @@ Projects are listed in chronological order (newest → oldest).
 Below are the **detailed descriptions and reflections** for each project listed above.
 
 ---
-### Barcelona Housing Displacement Analysis*
+### Barcelona Housing Displacement Analysis
 
 This project investigates how Airbnb activity in Barcelona may be contributing to housing displacement and pressure on the residential housing market. Using data from Inside Airbnb, I analyzed listing-level and neighborhood-level patterns to identify signs of commercialization and areas of concentrated short-term rental activity.
 
