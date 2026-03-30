@@ -5,10 +5,28 @@ Projects are listed in chronological order (newest → oldest).
 
 | Project | Description | Tools |
 |--------|------------|------|
+| **Barcelona Airbnb Analysis** | Housing market analysis examining Airbnb's impact on Barcelona's housing crisis through commercial operator detection and neighborhood-level housing pressure indexing | Python, Pandas |
 | **LLM-Based Medical Coding** *(In progress)* | RAG pipeline that converts unstructured clinical notes into ICD-10 codes | Python, ThauraAI API |
 | **2025 US Open Predictor** | First personal project exploring XGBoost on historical ATP tennis data | Python, XGBoost |
 
 Below are the **detailed descriptions and reflections** for each project listed above.
+
+---
+### Barcelona Housing Displacement Analysis*
+
+This project investigates how Airbnb activity in Barcelona may be contributing to housing displacement and pressure on the residential housing market. Using data from Inside Airbnb, I analyzed listing-level and neighborhood-level patterns to identify signs of commercialization and areas of concentrated short-term rental activity.
+
+**Dataset:**  https://insideairbnb.com/get-the-data/
+
+**Findings:** Comparing total listings to unique hosts (19,410 vs. 6,620), it is clear that a few multi-property owners and companies are dominating the Airbnb market in the city. Only 17.2% of listings are actually casual, with the rest being commercial and medium-term, meaning spaces are being rented to tourists and short-term visitors all year round through Airbnb, taking homes and rooms off of the market for people living there permanently. Out of 49 neighborhoods analyzed, Poblenou area (80.9) is in the highest scoring HPI neighborhoods, with the average HPI being 60.5. 
+
+**Tools:** Python, Pandas, NumPy, Scikit-learn, K-means clustering
+
+➡️ View project files: [project files](./barcelona_airbnb/Development)
+
+➡️ View project results: [project results](./barcelona_airbnb/results)
+
+➡️ View map: [HPI map](./barcelona_airbnb)
 
 ---
 
