@@ -22,12 +22,11 @@ This project investigates how Airbnb activity in Barcelona may be contributing t
 
 **Tools:** Python, Pandas, NumPy, Scikit-learn, K-means clustering
 
+➡️ View map: [HPI map](./barcelona_airbnb/map)
+
 ➡️ View project files: [project files](./barcelona_airbnb/Development)
 
 ➡️ View project results: [project results](./barcelona_airbnb/results)
-
-➡️ View map: [HPI map](./barcelona_airbnb/map)
-
 ---
 
 ### LLM-Based Medical Coding Pipeline *(In Progress)*
