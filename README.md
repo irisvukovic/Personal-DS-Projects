@@ -18,7 +18,7 @@ This project investigates how Airbnb activity in Barcelona may be contributing t
 
 **Dataset:**  https://insideairbnb.com/get-the-data/
 
-**Findings:** Comparing total listings to unique hosts (19,410 vs. 6,620), it is clear that a few multi-property owners and companies are dominating the Airbnb market in the city. Only 17.2% of listings are actually casual, with the rest being commercial and medium-term, meaning spaces are being rented to short-term visitors all year round through Airbnb, taking homes and rooms off of the market for people living there permanently. Out of 49 neighborhoods analyzed, Poblenou area (80.9) is in the highest scoring HPI neighborhoods, with the average HPI being 60.5. 
+**Findings:** Comparing total listings to unique hosts (19,410 vs. 6,620), it is clear that a few multi-property owners and companies are dominating the Airbnb market in the city. Only 17.2% of listings are actually casual, with the rest being commercial. Out of 49 neighborhoods analyzed, Poblenou area (80.9) is in the highest scoring HPI neighborhoods, with the average HPI being 60.5. 
 
 **Tools:** Python, Pandas, NumPy, Scikit-learn, K-means clustering
 
