@@ -34,7 +34,7 @@ Medical coding, or converting physician notes into standardized ICD-10 codes, is
 
 **Evaluation:** Top-1 and top-3 accuracy on held-out notes. Hallucination rate comparison between RAG and GPT-only baseline. Carbon footprint tracking via CodeCarbon for local compute.
 
-**Findings:** RAG-based architecture improved accuracy (+44%) and reduced hallucinations (-2) compared to GPT-only. (I created an concise [summary of results]((./medical_coder/powerbi_visualization.pdf)) using PowerBI)
+**Findings:** RAG-based architecture improved accuracy (+44%) and reduced hallucinations (-2) compared to GPT-only. (I created an concise [summary of results](./medical_coder/powerbi_visualization.pdf) using PowerBI)
 
 **Tools:** Python, ThauraAI API, Bio-ClinicalBERT, ChromaDB, cross-encoder reranking, CodeCarbon
 
