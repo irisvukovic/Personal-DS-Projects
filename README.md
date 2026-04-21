@@ -40,7 +40,7 @@ Medical coding, or converting physician notes into standardized ICD-10 codes, is
 
 ➡️ View project: [med_coding_single_code.ipynb](./medical_coder/med_coding_single_code.ipynb)
 
-**To do:** Written report.
+➡️ View written report on my website: [report](https://irisvuko.neocities.org/blog7)
 
 ---
 
