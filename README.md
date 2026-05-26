@@ -40,7 +40,7 @@ Medical coding, or converting physician notes into standardized ICD-10 codes, is
 
 ➡️ View project: [med_coding_single_code.ipynb](./medical_coder/med_coding_single_code.ipynb)
 
-➡️ View written report on my website: [report](https://irisvuko.neocities.org/blog7)
+➡️ View written [report](https://irisvuko.neocities.org/blog7) on my website.
 
 ---
 
@@ -53,3 +53,5 @@ My **first personal data science project**, created to experiment with **XGBoost
 **Results & Reflection:** My predictions were fairly accurate compared to the real outcomes. However, I realized that XGBoost may not have been the most suitable model for this task, despite its strong performance. In the future, I'd like to repeat this experiment using women's tennis data, a different modeling approach, and a dashboard-style visualization.
 
 ➡️ View project: [mensprediction.ipynb](./mensprediction.ipynb)
+
+➡️ View project on [Kaggle](https://www.kaggle.com/code/irisvukovic/2025-us-open-predictions)
