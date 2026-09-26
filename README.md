@@ -6,7 +6,7 @@ Projects are listed in chronological order (newest → oldest).
 | Project | Description | Tools |
 |--------|------------|------|
 | **Barcelona Airbnb Analysis** | Housing market analysis examining Airbnb's impact on Barcelona's housing crisis through commercial operator detection and neighborhood-level housing pressure indexing | Python, Pandas |
-| **LLM-Based Medical Coding** *(In progress)* | RAG pipeline that converts unstructured clinical notes into ICD-10 codes | Python, ThauraAI API |
+| **LLM-Based Medical Coding** | RAG pipeline that converts unstructured clinical notes into ICD-10 codes | Python, ThauraAI API |
 | **2025 US Open Predictor** | First personal project exploring XGBoost on historical ATP tennis data | Python, XGBoost |
 
 Below are the **detailed descriptions and reflections** for each project listed above.
@@ -26,7 +26,7 @@ This project investigates how Airbnb activity in Barcelona may be contributing t
 
 ---
 
-### LLM-Based Medical Coding Pipeline *(In Progress)*
+### LLM-Based Medical Coding Pipeline 
 
 Medical coding, or converting physician notes into standardized ICD-10 codes, is expensive, slow, and prone to errors when done manually. This project builds an automated pipeline to suggest ICD-10 codes from raw clinical notes using a retrieval-augmented generation (RAG) architecture.
 
